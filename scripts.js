@@ -24,7 +24,7 @@ form.addEventListener("submit", (event) => {
         console.error("Division not performed. Invalid number provided. Try again.", new Error().stack);
     }
 
-    else if (typeof (entries.get("dividend") || entries.get("divider")) !== "number") {
+    else if (isNaN(entries.get("dividend")) || isNaN(entries.get("divider"))) {
         document.body.innerHTML = "Something critical went wrong. Please reload the page";
         console.error("Something critical went wrong.", new Error().stack);
     }
